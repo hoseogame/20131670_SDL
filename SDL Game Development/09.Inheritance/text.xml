@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<STATES>
+  <MENU>
+    <TEXTURES>
+      <texture filename ="assets/button.png" ID="playbutton"/>
+      <texture filename ="assets/exit.png" ID ="exitbutton"/>
+    </TEXTURES>
+    <OBJECTS>
+      <object type ="MenuButton" x="100" y="100" width="400"
+              height="100" textureID="playbutton" numFrames="0"
+              callbackID="1" animSpeed="1"/>
+      <object type ="MenuButton" x="100" y="300" width="400"
+              height="100" textureID="exitbutton" numFrames="0"
+              callbackID="2" animSpeed="1"/>
+    </OBJECTS>
+  </MENU>
+  <PLAY>
+    <TEXTURES>
+      <texture filename="assets/head.png" ID="Head"/>
+      <texture filename="assets/body.png" ID="Body"/>
+      <texture filename="assets/food.png" ID="Food"/>
+      <texture filename="assets/back.png" ID="Deadline"/>
+    </TEXTURES>
+    <OBJECTS>
+      <object type="Player" x="100" y="100" width="55" height="55"
+              textureID="Head" numFrames="1"
+              callbackID="1" animSpeed="2"/>
+      <object type="Body" x="90" y="90" width="55" height="55"
+              textureID="Body" numFrames="1"
+              callbackID="2" animSpeed="2"/>
+      <object type="Food" x="300" y="300" width="55" height="55"
+              textureID="Food" numFrames="5"
+              callbackID="3" animSpeed="2"/>
+      <object type="Deadline" x="0" y="0" width="540" height="400"
+              textureID="Deadline" numFrames="1"
+              callbackID="4" animSpeed="2"/>
+    </OBJECTS>
+  </PLAY>
+  <PAUSE>
+    <TEXTURES>
+      <texture filename="assets/resume.png" ID="resumebutton"/>
+      <texture filename="assets/main.png" ID="mainbutton"/>
+    </TEXTURES>
+    <OBJECTS>
+      <object type="MenuButton" x="200" y="100" width="200"
+      height="80" textureID="mainbutton" numFrames="0"
+      callbackID="1" animSpeed="2"/>
+      <object type="MenuButton" x="200" y="300" width="200"
+      height="80" textureID="resumebutton" numFrames="0"
+      callbackID="2" animSpeed="2"/>
+    </OBJECTS>
+  </PAUSE>
+  <GAMEOVER>
+    <TEXTURES>
+      <texture filename="assets/gameover.png" ID="gameovertext"/>
+      <texture filename="assets/main.png" ID="mainbutton"/>
+      <texture filename="assets/restart.png" ID="restartbutton"/>
+    </TEXTURES>
+    <OBJECTS>
+      <object type="AnimatedGraphic" x="200" y="100" width="190"
+              height="30" textureID="gameovertext" numFrames="2"
+              callbackID="1" animSpeed="2"/>
+      <object type="MenuButton" x="200" y="200" width="200"
+              height="80" textureID="mainbutton" numFrames="0"
+              callbackID="2" animSpeed="2"/>
+      <object type="MenuButton" x="200" y="300" width="200"
+              height="80" textureID="restartbutton" numFrames="0"
+              callbackID="3" animSpeed="2"/>
+    </OBJECTS>
+  </GAMEOVER>
+  
+</STATES>

@@ -1,0 +1,89 @@
+﻿빌드 시작: 2016-06-12 오후 1:39:47
+     1>2 노드의 "G:\기말준비\SDL\20131670\SDL Game Development\09.Inheritance\09.Inheritance.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         E:\Utill\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt AnimateGraphic.cpp Enemy.cpp Game.cpp GameObject.cpp GameObjectFactory.cpp GameOverState.cpp InputHandler.cpp MainMenuState.cpp MenuButton.cpp MenuState.cpp PauseState.cpp PlayState.cpp Player.cpp SDLGameObject.cpp StateParser.cpp TextureManager.cpp main.cpp
+         StateParser.cpp
+         PlayState.cpp
+     1>PlayState.cpp(57): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>PlayState.cpp(58): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>PlayState.cpp(59): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>PlayState.cpp(60): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>PlayState.cpp(62): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>PlayState.cpp(63): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>PlayState.cpp(64): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>PlayState.cpp(65): warning C4244: '=' : 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+         PauseState.cpp
+         MenuState.cpp
+         MainMenuState.cpp
+         GameOverState.cpp
+         Game.cpp
+         코드를 생성하고 있습니다...
+         컴파일하고 있습니다...
+         main.cpp
+     1>main.cpp(6): warning C4244: '초기화 중' : 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+         TextureManager.cpp
+         SDLGameObject.cpp
+     1>SDLGameObject.cpp(19): warning C4244: '인수' : 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+         Player.cpp
+         MenuButton.cpp
+         InputHandler.cpp
+     1>InputHandler.cpp(60): warning C4244: '인수' : 'Sint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>InputHandler.cpp(61): warning C4244: '인수' : 'Sint32'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+         GameObjectFactory.cpp
+         GameObject.cpp
+         Enemy.cpp
+         AnimateGraphic.cpp
+         코드를 생성하고 있습니다...
+       Link:
+         E:\Utill\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"G:\기말준비\SDL\20131670\SDL Game Development\x64\Debug\09. Inheritance.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"G:\기말준비\SDL\20131670\SDL Game Development\x64\Debug\09. Inheritance.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\기말준비\SDL\20131670\SDL Game Development\x64\Debug\09. Inheritance.lib" /MACHINE:X64 x64\Debug\AnimateGraphic.obj
+         x64\Debug\Enemy.obj
+         x64\Debug\Game.obj
+         x64\Debug\GameObject.obj
+         x64\Debug\GameObjectFactory.obj
+         x64\Debug\GameOverState.obj
+         x64\Debug\GameState.obj
+         x64\Debug\GameStateMachine.obj
+         x64\Debug\InputHandler.obj
+         x64\Debug\LoaderParams.obj
+         x64\Debug\main.obj
+         x64\Debug\MainMenuState.obj
+         x64\Debug\MenuButton.obj
+         x64\Debug\MenuState.obj
+         x64\Debug\PauseState.obj
+         x64\Debug\Player.obj
+         x64\Debug\PlayState.obj
+         x64\Debug\SDLGameObject.obj
+         x64\Debug\StateParser.obj
+         x64\Debug\TextureManager.obj
+         x64\Debug\tinystr.obj
+         x64\Debug\tinyxml.obj
+         x64\Debug\tinyxmlerror.obj
+         x64\Debug\tinyxmlparser.obj
+         x64\Debug\Vector2D.obj
+     1>AnimateGraphic.obj : error LNK2019: SDL_GetTicks 외부 기호(참조 위치: "public: virtual void __cdecl AnimateGraphic::update(void)" (?update@AnimateGraphic@@UEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>main.obj : error LNK2001: SDL_GetTicks 외부 기호를 확인할 수 없습니다.
+     1>Player.obj : error LNK2001: SDL_GetTicks 외부 기호를 확인할 수 없습니다.
+     1>Game.obj : error LNK2019: SDL_CreateWindow 외부 기호(참조 위치: "public: bool __cdecl Game::init(char const *,int,int,int,int,bool)" (?init@Game@@QEAA_NPEBDHHHH_N@Z) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_DestroyWindow 외부 기호(참조 위치: "public: void __cdecl Game::clean(void)" (?clean@Game@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_CreateRenderer 외부 기호(참조 위치: "public: bool __cdecl Game::init(char const *,int,int,int,int,bool)" (?init@Game@@QEAA_NPEBDHHHH_N@Z) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_SetRenderDrawColor 외부 기호(참조 위치: "public: bool __cdecl Game::init(char const *,int,int,int,int,bool)" (?init@Game@@QEAA_NPEBDHHHH_N@Z) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_RenderClear 외부 기호(참조 위치: "public: void __cdecl Game::render(void)" (?render@Game@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_RenderPresent 외부 기호(참조 위치: "public: void __cdecl Game::render(void)" (?render@Game@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_DestroyRenderer 외부 기호(참조 위치: "public: void __cdecl Game::clean(void)" (?clean@Game@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_Init 외부 기호(참조 위치: "public: bool __cdecl Game::init(char const *,int,int,int,int,bool)" (?init@Game@@QEAA_NPEBDHHHH_N@Z) 함수)에서 확인하지 못했습니다.
+     1>Game.obj : error LNK2019: SDL_Quit 외부 기호(참조 위치: "public: void __cdecl Game::clean(void)" (?clean@Game@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>InputHandler.obj : error LNK2019: SDL_GetKeyboardState 외부 기호(참조 위치: "public: void __cdecl InputHandler::onKeyDown(void)" (?onKeyDown@InputHandler@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>InputHandler.obj : error LNK2019: SDL_PollEvent 외부 기호(참조 위치: "public: void __cdecl InputHandler::update(void)" (?update@InputHandler@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+     1>main.obj : error LNK2019: SDL_GetError 외부 기호(참조 위치: SDL_main 함수)에서 확인하지 못했습니다.
+     1>main.obj : error LNK2019: SDL_Delay 외부 기호(참조 위치: SDL_main 함수)에서 확인하지 못했습니다.
+     1>TextureManager.obj : error LNK2019: SDL_FreeSurface 외부 기호(참조 위치: "public: bool __cdecl TextureManager::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?load@TextureManager@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0PEAUSDL_Renderer@@@Z) 함수)에서 확인하지 못했습니다.
+     1>TextureManager.obj : error LNK2019: SDL_CreateTextureFromSurface 외부 기호(참조 위치: "public: bool __cdecl TextureManager::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?load@TextureManager@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0PEAUSDL_Renderer@@@Z) 함수)에서 확인하지 못했습니다.
+     1>TextureManager.obj : error LNK2019: SDL_RenderCopyEx 외부 기호(참조 위치: "public: void __cdecl TextureManager::draw(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int,struct SDL_Renderer *,enum SDL_RendererFlip)" (?draw@TextureManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHPEAUSDL_Renderer@@W4SDL_RendererFlip@@@Z) 함수)에서 확인하지 못했습니다.
+     1>TextureManager.obj : error LNK2019: IMG_Load 외부 기호(참조 위치: "public: bool __cdecl TextureManager::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?load@TextureManager@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0PEAUSDL_Renderer@@@Z) 함수)에서 확인하지 못했습니다.
+     1>MSVCRTD.lib(crtexew.obj) : error LNK2019: WinMain 외부 기호(참조 위치: __tmainCRTStartup 함수)에서 확인하지 못했습니다.
+     1>G:\기말준비\SDL\20131670\SDL Game Development\x64\Debug\09. Inheritance.exe : fatal error LNK1120: 19개의 확인할 수 없는 외부 참조입니다.
+     1>"G:\기말준비\SDL\20131670\SDL Game Development\09.Inheritance\09.Inheritance.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:54.87

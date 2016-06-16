@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{3b5a6eb0-e1e5-497c-894f-0a64d3fdbb0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\TextureManager">
+      <UniqueIdentifier>{b7e160b9-4909-49a1-b167-018913ecefed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\GameObject">
+      <UniqueIdentifier>{013d3eb9-83ba-4329-9f8e-051108a2742e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\LoaderParams">
+      <UniqueIdentifier>{2e7b3b02-e983-4891-85c2-6d05c8669553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject">
+      <UniqueIdentifier>{e8199ab1-a505-4d05-a1e9-9813d9b47886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Vector2D">
+      <UniqueIdentifier>{07ece3a8-1f3e-449d-86ea-8b6af8a41a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\InputHandler">
+      <UniqueIdentifier>{e6a2bb1a-ec71-412d-86ac-667c81957a6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State">
+      <UniqueIdentifier>{9ad2bee6-2e78-416f-9bb2-86681a4d1d7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\GameState">
+      <UniqueIdentifier>{5db33504-c6a1-408d-87df-c4527b7fc83f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\MenuState">
+      <UniqueIdentifier>{f2c861c5-674b-469e-b70b-8247d798ac0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\PlayState">
+      <UniqueIdentifier>{38f3a37d-5679-4a2a-a239-6ef25a510dd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\GameStateMachine">
+      <UniqueIdentifier>{bdcb1120-4466-4577-8ae1-3085d552bd5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\Enemy">
+      <UniqueIdentifier>{e4578013-b42e-428e-9a99-ab8dc4bfb18c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\Player">
+      <UniqueIdentifier>{6d662f97-8821-486e-bd56-8119f2cefc47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\MenuButton">
+      <UniqueIdentifier>{346a3f43-4e4f-4578-96be-dbad7440deb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\PauseState">
+      <UniqueIdentifier>{69f39b3c-8051-4d92-8e3f-5afdc4dddfbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\GameOverState">
+      <UniqueIdentifier>{6f46b3f1-4344-481e-b314-f35f9a79790d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\GameObjectFactory">
+      <UniqueIdentifier>{437b1dd1-48f9-43dc-a63d-f6c0b70e5bd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\StateParser">
+      <UniqueIdentifier>{528d7f92-f23c-42b0-8bec-c2c64e5cc032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State\MainMenuState">
+      <UniqueIdentifier>{ea9d594f-39b0-4eb7-af55-eb0d25bd2199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\AnimateGraphic">
+      <UniqueIdentifier>{255a9278-e334-4985-91c4-97e8337a536f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\xml">
+      <UniqueIdentifier>{af83084e-8369-49ff-9fcc-525b5b9b11b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\Food">
+      <UniqueIdentifier>{882cd6d6-f430-4116-b14c-c4931fbb4d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\DeadLine">
+      <UniqueIdentifier>{614f0784-e42a-4c3b-a1d6-779f0b7b3d53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\Player\Body">
+      <UniqueIdentifier>{e8f3b06f-4e3f-4d3b-958c-92cecfb60a38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>소스 파일\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>소스 파일\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\Game\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="LoaderParams.cpp">
+      <Filter>소스 파일\LoaderParams</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLGameObject.cpp">
+      <Filter>소스 파일\Game\SDLGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>소스 파일\Vector2D</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>소스 파일\InputHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>소스 파일\State\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuState.cpp">
+      <Filter>소스 파일\State\MenuState</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>소스 파일\State\PlayState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMachine.cpp">
+      <Filter>소스 파일\State\GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuButton.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\MenuButton</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseState.cpp">
+      <Filter>소스 파일\State\PauseState</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimateGraphic.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\AnimateGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverState.cpp">
+      <Filter>소스 파일\State\GameOverState</Filter>
+    </ClCompile>
+    <ClCompile Include="StateParser.cpp">
+      <Filter>소스 파일\State\StateParser</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectFactory.cpp">
+      <Filter>소스 파일\Game\GameObjectFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>소스 파일\State\MainMenuState</Filter>
+    </ClCompile>
+    <ClCompile Include="tinystr.cpp">
+      <Filter>소스 파일\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>소스 파일\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>소스 파일\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>소스 파일\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="Food.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Deadline.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\DeadLine</Filter>
+    </ClCompile>
+    <ClCompile Include="Body.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\Player\Body</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextureManager.h">
+      <Filter>소스 파일\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>소스 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>소스 파일\Game\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\Game\SDLGameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>소스 파일\Game\SDLGameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderParams.h">
+      <Filter>소스 파일\LoaderParams</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLGameObject.h">
+      <Filter>소스 파일\Game\SDLGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>소스 파일\Vector2D</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>소스 파일\InputHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>소스 파일\State\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>소스 파일\State\MenuState</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>소스 파일\State\PlayState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
+      <Filter>소스 파일\State\GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuButton.h">
+      <Filter>소스 파일\Game\SDLGameObject\MenuButton</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseState.h">
+      <Filter>소스 파일\State\PauseState</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimateGraphic.h">
+      <Filter>소스 파일\Game\SDLGameObject\AnimateGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverState.h">
+      <Filter>소스 파일\State\GameOverState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectFactory.h">
+      <Filter>소스 파일\Game\GameObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="StateParser.h">
+      <Filter>소스 파일\State\StateParser</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>소스 파일\State\MainMenuState</Filter>
+    </ClInclude>
+    <ClInclude Include="tinystr.h">
+      <Filter>소스 파일\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+      <Filter>소스 파일\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="Food.h">
+      <Filter>소스 파일\Game\SDLGameObject\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Deadline.h">
+      <Filter>소스 파일\Game\SDLGameObject\DeadLine</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeDefine.h">
+      <Filter>소스 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Body.h">
+      <Filter>소스 파일\Game\SDLGameObject\Player\Body</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug\SDL_ttf.h">
+      <Filter>소스 파일\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="text.xml">
+      <Filter>소스 파일</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

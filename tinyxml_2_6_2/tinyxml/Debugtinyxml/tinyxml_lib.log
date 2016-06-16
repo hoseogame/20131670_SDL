@@ -1,0 +1,8 @@
+﻿  tinyxmlparser.cpp
+  tinyxmlerror.cpp
+  tinyxml.cpp
+c:\users\hwang hyebin\desktop\160610\20131670\tinyxml_2_6_2\tinyxml\tinyxml.cpp(670): warning C4458: 'value' 선언은 클래스 멤버를 숨깁니다.
+  c:\users\hwang hyebin\desktop\160610\20131670\tinyxml_2_6_2\tinyxml\tinyxml.h(761): note: 'TiXmlNode::value' 선언을 참조하십시오.
+  tinystr.cpp
+  코드를 생성하고 있습니다...
+  tinyxml_lib.vcxproj -> C:\Users\Hwang hyebin\Desktop\160610\20131670\tinyxml_2_6_2\tinyxml\Debugtinyxml\tinyxml.lib
