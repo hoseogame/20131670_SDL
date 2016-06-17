@@ -1,2 +1,14 @@
-﻿  09.Inheritance.vcxproj -> C:\Users\Hwang hyebin\Desktop\SDL\20131670\SDL Game Development\Debug\09. Inheritance.exe
-  09.Inheritance.vcxproj -> C:\Users\Hwang hyebin\Desktop\SDL\20131670\SDL Game Development\Debug\09. Inheritance.pdb (Partial PDB)
+﻿  Game.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  main.cpp
+  StateParser.cpp
+  SDLGameObject.cpp
+  PlayState.cpp
+  PauseState.cpp
+  MenuState.cpp
+  MainMenuState.cpp
+  InputHandler.cpp
+  GameOverState.cpp
+  09.Inheritance.vcxproj -> C:\Users\user\Desktop\SDL\20131670\SDL Game Development\Debug\09. Inheritance.exe
+  09.Inheritance.vcxproj -> C:\Users\user\Desktop\SDL\20131670\SDL Game Development\Debug\09. Inheritance.pdb (Partial PDB)

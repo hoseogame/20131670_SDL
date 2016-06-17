@@ -1,5 +1,6 @@
 #pragma once
 
+//Direction¿¡ µû¸¥ enum
 enum SNAKE_DIRECTION
 {
 	E_NONE,

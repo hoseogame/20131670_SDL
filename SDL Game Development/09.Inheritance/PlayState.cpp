@@ -27,14 +27,14 @@ void PlayState::update()
 		m_gameObjects[i]->update();
 	}
 
-	if (checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[0]), dynamic_cast<SDLGameObject*>(m_gameObjects[1]))) // 사과 충돌
+	if (checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[0]), dynamic_cast<SDLGameObject*>(m_gameObjects[1]))) // 사과를 먹으면
 	{
 		m_number->DrawPaticial(m_number->getWidth(), m_number->getHeight(), m_number->SumScore(), 1);
 		m_player->make_tail();
 		m_food->getPosition() = Vector2D(rand() % 600, rand() % 440);
 	}
 
-	if (m_player->getPosition().getX() >= 600.0f || m_player->getPosition().getX() <= 0.0f ||
+	if (m_player->getPosition().getX() >= 600.0f || m_player->getPosition().getX() <= 0.0f ||  //게임오버 조건
 		m_player->getPosition().getY() >= 440.0f || m_player->getPosition().getY() <= 0.0f )
 	{
 		TheGame::Instance()->getStateMachine()->pushState(new GameOverState());
@@ -54,12 +54,11 @@ bool PlayState::onEnter()
 	stateParser.parseState("text.xml", s_playID, &m_gameObjects, &m_textureIDList);
 	
 	m_player = dynamic_cast<Player*>(m_gameObjects[0]); //플레이어의 make tail로 접근하기 위한 다운 캐스팅.
-	m_player->setDirection(E_RIGHT);
+	m_player->setDirection(E_RIGHT); //처음 시작은 right 방향으로.
 	m_food = dynamic_cast<Food*>(m_gameObjects[1]);
 	m_number = dynamic_cast<Score*>(m_gameObjects[2]);
-	//m_score = dynamic_cast<Score*>(m_gameObjects[3]);
-	//m_score->draw();
-	for (int i = 0; i < 3; ++i)
+
+	for (int i = 0; i < 3; ++i) // 테일은 기본적으로 3개로 시작
 	{
 		m_player->make_tail();
 	}

@@ -12,7 +12,6 @@ bool StateParser::parseState( const char* stateFile, std::string stateID,
 	if ( !xmlDoc.LoadFile( stateFile ) )
 	{
 		std::cout << xmlDoc.ErrorDesc() << "\n";
-		//cerr <<  xmlDoc.ErrorDesc() << "\n";
 		return false;
 	}
 	

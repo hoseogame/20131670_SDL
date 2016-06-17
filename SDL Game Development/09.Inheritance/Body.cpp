@@ -20,30 +20,32 @@ void Body::update()
 
 		bool isSpinned = false;
 
+		//direction에 따라 나뉨.
 		switch (m_direction)
 		{
 		case E_UP:
-			if (m_spinInfoQueue.size() > 0) {
-				if (m_position.getY() <= m_spinInfoQueue.front().m_spinPosition.getY())
+			if (m_spinInfoQueue.size() > 0) //스핀포인트 큐에 스핀포인트가 들어가 있을 경우 
+			{
+				if (m_position.getY() <= m_spinInfoQueue.front().m_spinPosition.getY()) //현재 포인트가 스핀포인트보다 작을때 
 				{
 					isSpinned = true;
 				}
-				else {
+				else //작지 않을땐 velocity 변경  
+				{
 					m_velocity.setX(0);
 					m_velocity.setY(-2);
 				}
 			}
-			else {
+			else 
+			{
 				m_velocity.setX(0);
 				m_velocity.setY(-2);
-				//m_position = m_prevBody->getPrevPosition() + Vector2D(0.0f, m_height);
 			}
 			break;
 
 		case E_LEFT:
-			//m_position = m_prevBody->getPrevPosition() + Vector2D(m_width, 0.0f);
-
-			if (m_spinInfoQueue.size() > 0) {
+			if (m_spinInfoQueue.size() > 0) 
+			{
 				if (m_position.getX() <= m_spinInfoQueue.front().m_spinPosition.getX())
 				{
 					isSpinned = true;
@@ -56,19 +58,18 @@ void Body::update()
 			else {
 				m_velocity.setX(-2);
 				m_velocity.setY(0);
-				//m_position = m_prevBody->getPrevPosition() + Vector2D(0.0f, m_height);
 			}
 			break;
 
 		case E_RIGHT:
-			//m_position = m_prevBody->getPrevPosition() + Vector2D(m_width * -1.0f, 0.0f);
-
-			if (m_spinInfoQueue.size() > 0) {
+			if (m_spinInfoQueue.size() > 0) 
+			{
 				if (m_position.getX() >= m_spinInfoQueue.front().m_spinPosition.getX())
 				{
 					isSpinned = true;
 				}
-				else {
+				else 
+				{
 					m_velocity.setX(2);
 					m_velocity.setY(0);
 				}
@@ -76,14 +77,12 @@ void Body::update()
 			else {
 				m_velocity.setX(2);
 				m_velocity.setY(0);
-				//m_position = m_prevBody->getPrevPosition() + Vector2D(0.0f, m_height);
 			}
 			break;
 
 		case E_DOWN:
-			//m_position = m_prevBody->getPrevPosition() + Vector2D(0.0f, m_height * -1.0f);
-
-			if (m_spinInfoQueue.size() > 0) {
+			if (m_spinInfoQueue.size() > 0) 
+			{
 				if (m_position.getY() >= m_spinInfoQueue.front().m_spinPosition.getY())
 				{
 					isSpinned = true;
@@ -96,41 +95,32 @@ void Body::update()
 			else {
 				m_velocity.setX(0);
 				m_velocity.setY(2);
-				//m_position = m_prevBody->getPrevPosition() + Vector2D(0.0f, m_height);
 			}
 			break;
 		}
 
-		if (isSpinned) {
-			m_prevDirection = m_direction;
-			
-			//if (m_prevBody != NULL) {
-				//m_direction = m_prevBody->getPrevDirection();
-			//}
-			m_direction = m_spinInfoQueue.front().m_afterDirection;
-			m_position = m_spinInfoQueue.front().m_spinPosition;
+		if (isSpinned == true) 
+		{
+			m_prevDirection = m_direction; //현재의 디렉션을 과거의 디렉션에 넣어줌. (바꿀예정이라)
+	
+			m_direction = m_spinInfoQueue.front().m_afterDirection; //현재 디렉션은 스핀포인트큐안에 있는 바뀐 디렉션.
+			m_position = m_spinInfoQueue.front().m_spinPosition; // 포지션 역시.
 
-			switch (m_direction)
+			switch (m_direction) //디렉션에 따른 움직임
 			{
 			case E_UP:
-
 					m_velocity.setX(0);
 					m_velocity.setY(-2);
-
 				break;
 
 			case E_LEFT:
-
 					m_velocity.setX(-2);
 					m_velocity.setY(0);
-
 				break;
 
 			case E_RIGHT:
-
 					m_velocity.setX(2);
 					m_velocity.setY(0);
-
 				break;
 
 			case E_DOWN:
@@ -139,15 +129,12 @@ void Body::update()
 				break;
 			}
 
-			//m_position += m_velocity;
-
-			if (m_nextBody != NULL) {
-				m_nextBody->addSpinPosition(m_spinInfoQueue.front());
+			if (m_nextBody != NULL)  //다음 바디가 없지 않다면.
+			{
+				m_nextBody->addSpinPosition(m_spinInfoQueue.front()); 
 			}
-
 			m_spinInfoQueue.pop();
 		}
-
 		m_position += m_velocity;
 	}
 }
@@ -163,8 +150,6 @@ void Body::setPrevbody(Body* prevbody)
 {
 	m_prevBody = prevbody;
 }
-
-
 Body::~Body()
 {
 }

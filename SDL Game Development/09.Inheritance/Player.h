@@ -7,13 +7,7 @@
 #include <vector>
 
 class Body;
-////뱀 몸통 
-//struct BODY 
-//{
-//	//sprite를 가지고 있어야함.
-//	Vector2D	position;
-//	struct BODY * next;
-//};
+
 class Player : public SDLGameObject
 {
 public:
@@ -25,7 +19,7 @@ public:
 	void make_tail(); // 꼬리를 만들어줌
 
 	void setDirection(SNAKE_DIRECTION direction) { m_direction = direction; }
-	//bool CollisionSelf(); //몸통과 머리 충돌체크 했을때 
+
 private :
 	void handleInput();
 	    
@@ -34,9 +28,6 @@ private :
 
 	int m_tailCount;
 	bool m_isSpinned;
-
-	//Vector2D m_prevPosition;
-	//Vector2D m_spinPosition;
 	Body* next;
 
 	std::vector<Body*> m_bodys;

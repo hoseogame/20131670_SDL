@@ -251,9 +251,6 @@
     <ClInclude Include="Body.h">
       <Filter>소스 파일\Game\SDLGameObject\Player\Body</Filter>
     </ClInclude>
-    <ClInclude Include="Debug\SDL_ttf.h">
-      <Filter>소스 파일\Game</Filter>
-    </ClInclude>
     <ClInclude Include="Score.h">
       <Filter>소스 파일\Game\SDLGameObject\Number</Filter>
     </ClInclude>

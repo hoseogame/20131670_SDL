@@ -21,11 +21,9 @@ Game::Game()
 	m_pRenderer = 0;
 	m_bRunning = false;
 }
-
 Game::~Game()
 {
 }
-
 bool Game::init( const char* title, int xpos, int ypos, int width, int height, bool fullscreen )
 {
 	if ( SDL_Init( SDL_INIT_EVERYTHING ) >= 0 )
@@ -44,14 +42,13 @@ bool Game::init( const char* title, int xpos, int ypos, int width, int height, b
 	}
 	else
 	{
-		return false; // sdl could not initialize
+		return false; 
 	}
 
 	if (!TheTextureManager::Instance()->load("assets/head.png", "Head", m_pRenderer))
 	{
 		return false;
 	}
-	//helicopter2
 	if ( !TheTextureManager::Instance()->load("assets/food.png", "Food", m_pRenderer ))
 	{
 		return false;
@@ -60,10 +57,6 @@ bool Game::init( const char* title, int xpos, int ypos, int width, int height, b
 	{
 		return false;
 	}
-	/*if (!TheTextureManager::Instance()->load("assets/score.png", "Score", m_pRenderer))
-	{
-		return false;
-	}*/
 	if (!TheTextureManager::Instance()->load("assets/body.png", "Body", m_pRenderer))
 	{
 		return false;
@@ -75,7 +68,6 @@ bool Game::init( const char* title, int xpos, int ypos, int width, int height, b
 	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
 	TheGameObjectFactory::Instance()->registerType("Food", new FoodCreator());
 	TheGameObjectFactory::Instance()->registerType("Body", new BodyCreator());
-	//TheGameObjectFactory::Instance()->registerType("Score", new ScoreCreator());
 	TheGameObjectFactory::Instance()->registerType("Number", new ScoreCreator());
 
 	m_bRunning	= true;

@@ -5,7 +5,6 @@
 #include <vector>
 #include "GameObject.h"
 #include "GameStateMachine.h"
-#include <SDL_ttf.h>
 
 class Game
 {
@@ -31,24 +30,15 @@ public :
 	
 private:
 	Game();
-	static Game* s_pInstance;
-	SDL_Window* m_pWindow;
-	SDL_Renderer* m_pRenderer;
-	SDL_Texture* m_pTexture;
-
-	int m_currentFrame;
-	int m_currentFrame2;
+	static Game*				s_pInstance;
+	SDL_Window*					m_pWindow;
+	SDL_Renderer*				m_pRenderer;
+	SDL_Texture*				m_pTexture;
 
 	bool m_bRunning;
  
-	std::vector<GameObject*> m_gameObject;
-	GameStateMachine* m_pGameStateMachine;
-
-	TTF_Font* m_font;
-	SDL_Color textColor;
-	
-	SDL_Texture* blendedTexture;
-	SDL_Rect blendedRect;
+	std::vector<GameObject*>	m_gameObject;
+	GameStateMachine*			m_pGameStateMachine;
 };
 typedef Game TheGame;
 

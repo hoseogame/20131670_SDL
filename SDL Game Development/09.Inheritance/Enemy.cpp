@@ -12,8 +12,6 @@ void Enemy::load(const LoaderParams *pParams)
 }
 void Enemy::update()
 {
-	//m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
-
 	if (m_position.getY() < 0)
 	{
 		m_velocity.setY(2);

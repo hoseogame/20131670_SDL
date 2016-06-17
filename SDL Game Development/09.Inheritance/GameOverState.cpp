@@ -33,19 +33,18 @@ bool GameOverState::onEnter()
 	{
 		MenuButton* temp = static_cast<MenuButton*>(m_gameObjects[i]);
 
-		if (nullptr != temp)
+		if (temp != nullptr) //직접적으로 선택해서 해줌;
 		{
-			if (2 == temp->getCallbackID())
+			if (temp->getCallbackID() == 2)
 			{
 				temp->setCallback(s_gameOverToMain);
 			}
-			else if (3 == temp->getCallbackID())
+			else if (temp->getCallbackID() ==3 )
 			{
 				temp->setCallback(s_restartPlay);
 			}
 		}
 	}
-
 	return true;
 }
 void GameOverState::update()
