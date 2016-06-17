@@ -82,7 +82,7 @@ void StateParser::parseObjects( TiXmlElement* pStateRoot,
 		e->Attribute( "animSpeed", &animSpeed );
 
 		textureID = e->Attribute( "textureID" );
-		
+
 		GameObject* pGameObject = TheGameObjectFactory::Instance()->create(e->Attribute("type"));
 		pGameObject->load(new LoaderParams (x, y, width, height, textureID, numFrames, callbackID, animSpeed));
 		pObjects->push_back(pGameObject);

@@ -3,6 +3,7 @@
 
 #include "SDLGameObject.h"
 #include "GameObjectFactory.h"
+#include "SnakeDefine.h"
 #include <vector>
 
 class Body;
@@ -22,18 +23,23 @@ public:
 	void clean();
 	void load( const LoaderParams* pParams );
 	void make_tail(); // 꼬리를 만들어줌
+
+	void setDirection(SNAKE_DIRECTION direction) { m_direction = direction; }
 	//bool CollisionSelf(); //몸통과 머리 충돌체크 했을때 
 private :
 	void handleInput();
 	    
-	int m_direction;				//현재 뱀의 머리가 향하는 방향. (멈춤:0, 위:1,왼쪽:2,오른쪽:3,아래:4)
-	int m_prevDirection;			//이전 스템에서 움직인 방향	//한스템에서 방향을 두번바꿀시 충돌 디버깅을 위함
+	SNAKE_DIRECTION m_direction;				//현재 뱀의 머리가 향하는 방향. (멈춤:0, 위:1,왼쪽:2,오른쪽:3,아래:4)
+	SNAKE_DIRECTION m_prevDirection;			//이전 스템에서 움직인 방향	//한스템에서 방향을 두번바꿀시 충돌 디버깅을 위함
 
-	Vector2D m_prevPosition;
+	int m_tailCount;
+	bool m_isSpinned;
+
+	//Vector2D m_prevPosition;
+	//Vector2D m_spinPosition;
 	Body* next;
 
 	std::vector<Body*> m_bodys;
-
 };
 
 class PlayerCreator : public BaseCreator

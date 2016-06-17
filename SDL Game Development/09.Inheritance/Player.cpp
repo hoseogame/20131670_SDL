@@ -2,9 +2,8 @@
 #include "InputHandler.h"
 #include "GameObjectFactory.h"
 #include "Body.h"
-#include "SnakeDefine.h"
 
-Player::Player() : SDLGameObject(), m_prevPosition(m_position), m_direction(E_NONE), m_prevDirection(E_NONE)
+Player::Player() : SDLGameObject(), m_direction(E_NONE), m_prevDirection(E_NONE), m_tailCount(0), m_isSpinned(false)//, m_prevPosition(m_position)
 {
 	/*snake_tail = (struct BODY *)malloc(sizeof(struct BODY));
 	snake_tail->position.setX(5);
@@ -17,22 +16,8 @@ Player::Player() : SDLGameObject(), m_prevPosition(m_position), m_direction(E_NO
 	snake_head->next = snake_tail;*/
 
 	m_bodys.clear();
-	Body* createdBody = reinterpret_cast<Body*>(TheGameObjectFactory::Instance()->create("Body"));
-	//createdBody->load(new LoaderParams(0, 0, 55, 55, "Body", 1));
-	createdBody->setPosition(m_position + Vector2D(m_width * -1.0f, 0.0f));
-	createdBody->setPrevbody(NULL);
-	createdBody->setPrevDirection(m_direction);
-	m_bodys.push_back(createdBody);
-
-
-	for (int i = 1; i < 3; ++i) {
-		createdBody = reinterpret_cast<Body*>(TheGameObjectFactory::Instance()->create("Body"));
-		//createdBody->load(new LoaderParams(0, 0, 55, 55, "Body", 1));
-		createdBody->setPosition(m_bodys[i-1]->getPosition() + Vector2D(m_bodys[i - 1]->getWidth() * -1.0f, 0.0f));
-		createdBody->setPrevbody(m_bodys[i - 1]);
-		m_bodys.push_back(createdBody);
-	}
 }
+
 void Player::load( const LoaderParams* pParams )
 {
 	SDLGameObject::load( pParams );
@@ -52,95 +37,139 @@ void Player::update()
 {
 	SDLGameObject::update();
 
+	m_isSpinned = false;
+
 	//CollisionSelf();
 	//m_velocity.setX(0);
 	//m_velocity.setY(0);
-	m_prevPosition = m_position;
-	m_position += m_velocity;
 	handleInput(); // add our function
 
-	m_bodys[0]->setPrevPosition(m_bodys[0]->getPosition());
+	
 
 	switch (m_direction)
 	{
-	case E_UP:
-		m_bodys[0]->setPosition(m_prevPosition + Vector2D(0.0f, m_height));
+	case E_UP :
+		m_velocity.setX(0);
+		m_velocity.setY(-2);
 		break;
 
 	case E_LEFT:
-		m_bodys[0]->setPosition(m_prevPosition + Vector2D(m_width, 0.0f));
+		m_velocity.setX(-2);
+		m_velocity.setY(0);
 		break;
 
 	case E_RIGHT:
-		m_bodys[0]->setPosition(m_prevPosition + Vector2D(m_width * -1.0f, 0.0f));
+		m_velocity.setX(2);
+		m_velocity.setY(0);
 		break;
 
 	case E_DOWN:
-		m_bodys[0]->setPosition(m_prevPosition + Vector2D(0.0f, m_height * -1.0f));
+		m_velocity.setX(0);
+		m_velocity.setY(2);
 		break;
 	}
+	m_position += m_velocity;
+	//m_prevPosition = m_position;
+	
+	if (m_bodys.size() > 0) {
+		if (m_isSpinned) {
+			m_bodys[0]->addSpinPosition(m_position, m_direction);
+		}
 
-	m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
+		//m_bodys[0]->setPrevPosition(m_bodys[0]->getPosition());
+		//m_bodys[0]->setPrevDirection(m_bodys[0]->getDirection());
+		//m_bodys[0]->setDirection(m_prevDirection);
+
+		/*switch (m_prevDirection)
+		{
+		case E_UP:
+			m_bodys[0]->setPosition(m_prevPosition + Vector2D(0.0f, m_height));
+			break;
+
+		case E_LEFT:
+			m_bodys[0]->setPosition(m_prevPosition + Vector2D(m_width, 0.0f));
+			break;
+
+		case E_RIGHT:
+			m_bodys[0]->setPosition(m_prevPosition + Vector2D(m_width * -1.0f, 0.0f));
+			break;
+
+		case E_DOWN:
+			m_bodys[0]->setPosition(m_prevPosition + Vector2D(0.0f, m_height * -1.0f));
+			break;
+		}*/
+
+		for (int i = 0; i < m_bodys.size(); ++i)
+		{
+			m_bodys[i]->update();
+		}
+	}
+
 	
 
-	for (int i = 0; i < m_bodys.size(); ++i)
-	{
-		m_bodys[i]->update();
-	}
+	//m_currentFrame = int(((SDL_GetTicks() / 100) % m_numFrames));
 }
 
 void Player::handleInput()
 {
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
 	{
-		if (m_direction != E_UP) 
+		if ((m_direction != E_UP) && (m_direction != E_DOWN))
 		{
 			if (m_direction != E_NONE) {
 				m_prevDirection = m_direction;
 			}
+			else {
+				m_prevDirection = E_UP;
+			}
 
-			m_velocity.setY(-4);
-			m_velocity.setX(0);
 			m_direction = E_UP;
+			m_isSpinned = true;
 		}
 	}
 	else if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
 	{
-		if (m_direction != E_LEFT)
+		if ((m_direction != E_LEFT) && (m_direction != E_RIGHT))
 		{
 			if (m_direction != E_NONE) {
 				m_prevDirection = m_direction;
 			}
+			else {
+				m_prevDirection = E_LEFT;
+			}
 
-			m_velocity.setX(-4);
-			m_velocity.setY(0);
 			m_direction = E_LEFT;
+			m_isSpinned = true;
 		}
 	}
 	else if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
 	{
-		if (m_direction != E_RIGHT)
+		if ((m_direction != E_LEFT) && (m_direction != E_RIGHT))
 		{
 			if (m_direction != E_NONE) {
 				m_prevDirection = m_direction;
 			}
+			else {
+				m_prevDirection = E_RIGHT;
+			}
 
-			m_velocity.setX(4);
-			m_velocity.setY(0);
 			m_direction = E_RIGHT;
+			m_isSpinned = true;
 		}
 	}
 	else if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
 	{
-		if (m_direction != E_DOWN)
+		if ((m_direction != E_UP) && (m_direction != E_DOWN))
 		{
 			if (m_direction != E_NONE) {
 				m_prevDirection = m_direction;
 			}
+			else {
+				m_prevDirection = E_DOWN;
+			}
 
-			m_velocity.setY(4);
-			m_velocity.setX(0);
 			m_direction = E_DOWN;
+			m_isSpinned = true;
 		}
 	}
 
@@ -171,6 +200,71 @@ void Player::handleInput()
 }
 void Player::make_tail()
 {
+	Body* createdBody = reinterpret_cast<Body*>(TheGameObjectFactory::Instance()->create("Body"));
+	
+	if (m_bodys.size() <= 0) {
+		createdBody->load(new LoaderParams(0, 0, 55, 55, "Body", 1));
+
+		switch (m_direction)
+		{
+		case E_UP:
+			createdBody->setPosition(m_position + Vector2D(0.0f, m_height));
+			break;
+
+		case E_LEFT:
+			createdBody->setPosition(m_position + Vector2D(m_width, 0.0f));
+			break;
+
+		case E_RIGHT:
+			createdBody->setPosition(m_position + Vector2D(m_width * -1.0f, 0.0f));
+			break;
+
+		case E_DOWN:
+			createdBody->setPosition(m_position + Vector2D(0.0f, m_height * -1.0f));
+			break;
+		}
+
+		createdBody->setPrevbody(NULL);
+		createdBody->setDirection(m_direction);
+		m_bodys.push_back(createdBody);
+	}
+	else {
+		createdBody->load(new LoaderParams(0, 0, 55, 55, "Body", 1));
+
+		switch (m_bodys[m_tailCount-1]->getDirection())
+		{
+		case E_UP:
+			createdBody->setPosition(m_bodys[m_tailCount - 1]->getPosition() + Vector2D(0.0f, m_bodys[m_tailCount - 1]->getHeight()));
+			break;
+
+		case E_LEFT:
+			createdBody->setPosition(m_bodys[m_tailCount - 1]->getPosition() + Vector2D(m_bodys[m_tailCount - 1]->getWidth(), 0.0f));
+			break;
+
+		case E_RIGHT:
+			createdBody->setPosition(m_bodys[m_tailCount - 1]->getPosition() + Vector2D(m_bodys[m_tailCount - 1]->getWidth() * -1.0f, 0.0f));
+			break;
+
+		case E_DOWN:
+			createdBody->setPosition(m_bodys[m_tailCount - 1]->getPosition() + Vector2D(0.0f, m_bodys[m_tailCount - 1]->getHeight() * -1.0f));
+			break;
+		}
+		
+		createdBody->setPrevbody(m_bodys[m_tailCount - 1]);
+		m_bodys[m_tailCount - 1]->setNextBody(createdBody);
+		createdBody->setDirection(m_bodys[m_tailCount - 1]->getDirection());
+		m_bodys.push_back(createdBody);
+	}
+
+	++m_tailCount;
+
+	/*for (int i = 1; i < 3; ++i) {
+		createdBody = reinterpret_cast<Body*>(TheGameObjectFactory::Instance()->create("Body"));
+		createdBody->load(new LoaderParams(0, 0, 55, 55, "Body", 1));
+		createdBody->setPosition(m_bodys[i - 1]->getPosition() + Vector2D(m_bodys[i - 1]->getWidth() * -1.0f, 0.0f));
+		createdBody->setPrevbody(m_bodys[i - 1]);
+		m_bodys.push_back(createdBody);
+	}*/
 	/*
 	int tmp_x, tmp_y;
 	int i = 0;

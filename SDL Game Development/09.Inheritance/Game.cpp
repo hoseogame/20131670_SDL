@@ -8,8 +8,8 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Food.h"
-#include "Deadline.h"
 #include "Body.h"
+#include "Score.h"
 #include <string>
 #include <iostream>
 
@@ -56,11 +56,14 @@ bool Game::init( const char* title, int xpos, int ypos, int width, int height, b
 	{
 		return false;
 	}
-	
-	if (!TheTextureManager::Instance()->load("assets/back.png", "Deadline", m_pRenderer))
+	if (!TheTextureManager::Instance()->load("assets/number.png", "Number", m_pRenderer))
 	{
 		return false;
 	}
+	/*if (!TheTextureManager::Instance()->load("assets/score.png", "Score", m_pRenderer))
+	{
+		return false;
+	}*/
 	if (!TheTextureManager::Instance()->load("assets/body.png", "Body", m_pRenderer))
 	{
 		return false;
@@ -72,15 +75,12 @@ bool Game::init( const char* title, int xpos, int ypos, int width, int height, b
 	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
 	TheGameObjectFactory::Instance()->registerType("Food", new FoodCreator());
 	TheGameObjectFactory::Instance()->registerType("Body", new BodyCreator());
-	TheGameObjectFactory::Instance()->registerType("Deadline", new DeadlineCreator());
-	//푸드
-	//TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
-	
-	TTF_Init();
+	//TheGameObjectFactory::Instance()->registerType("Score", new ScoreCreator());
+	TheGameObjectFactory::Instance()->registerType("Number", new ScoreCreator());
+
 	m_bRunning	= true;
 	m_pGameStateMachine->pushState(new PlayState);
 
-	
 	return true; // sdl initialize
 }
 
@@ -89,18 +89,6 @@ void Game::render()
 	SDL_RenderClear( m_pRenderer );  
 	m_pGameStateMachine->render();
 	SDL_RenderPresent( m_pRenderer );   // 윈도우 보이기
-	
-	SDL_Surface *screen = NULL;
-	SDL_Surface *message = NULL;
-
-	TTF_Font *font;
-	SDL_Color color = { 255, 255, 255 };
-	font = TTF_OpenFont("HANNA_ttf.ttf", 28);
-
-	message = TTF_RenderText_Solid(font, "blah blah blah", color);
-
-	SDL_BlitSurface(message, NULL, screen, NULL);
-	SDL_UpdateWindowSurface(m_pWindow);
 }
 
 void Game::clean()
@@ -108,7 +96,6 @@ void Game::clean()
 	TheInputHandler::Instance()->clean();
 	SDL_DestroyWindow( m_pWindow );
 	SDL_DestroyRenderer( m_pRenderer );
-	TTF_Quit();
 	SDL_Quit();
 }
 

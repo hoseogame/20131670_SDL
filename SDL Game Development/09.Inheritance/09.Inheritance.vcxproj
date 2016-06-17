@@ -128,7 +128,6 @@
   <ItemGroup>
     <ClCompile Include="AnimateGraphic.cpp" />
     <ClCompile Include="Body.cpp" />
-    <ClCompile Include="Deadline.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -143,6 +142,7 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayState.cpp" />
@@ -158,7 +158,6 @@
   <ItemGroup>
     <ClInclude Include="AnimateGraphic.h" />
     <ClInclude Include="Body.h" />
-    <ClInclude Include="Deadline.h" />
     <ClInclude Include="Debug\SDL_ttf.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Food.h" />
@@ -173,6 +172,7 @@
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="MenuButton.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="PauseState.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayState.h" />

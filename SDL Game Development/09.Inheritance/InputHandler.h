@@ -29,7 +29,7 @@ public:
 	void onKeyUp();
 
 	bool isKeyDown(SDL_Scancode key);
-	bool getMouseButtonState(int buttonNumber);
+	bool getMouseButtonState(int buttonScore);
 	Vector2D* getMousePosition();
 
 private:

@@ -13,9 +13,13 @@ public:
 	virtual void update();
 	virtual void clean();
 	virtual void load( const LoaderParams* pParams );
+	virtual void DrawPaticial(int _width, int _height, int _currentFrame, int _currentRow = 1);
 
 	void setPosition(Vector2D position) { m_position = position; }
 	Vector2D& getPosition() { return m_position; }
+
+	void setWidth(int width) { m_width = width; }
+	void setHeight(int height) { m_height = height; }
 	int getWidth() { return m_width; }
 	int getHeight() { return m_height; }
 

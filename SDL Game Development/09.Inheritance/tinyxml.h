@@ -248,7 +248,7 @@ public:
 	void* GetUserData()						{ return userData; }	///< Get a pointer to arbitrary user data.
 	const void* GetUserData() const 		{ return userData; }	///< Get a pointer to arbitrary user data.
 
-	// Table that returs, for a given lead byte, the total number of bytes
+	// Table that returs, for a given lead byte, the total Score of bytes
 	// in the UTF-8 sequence.
 	static const int utf8ByteTable[256];
 
@@ -770,7 +770,7 @@ private:
 
 
 /** An attribute is a name-value pair. Elements have an arbitrary
-	number of attributes, each with a unique name.
+	Score of attributes, each with a unique name.
 
 	@note The attributes are not TiXmlNodes, since they are not
 		  part of the tinyXML document object model. There are other
@@ -935,7 +935,7 @@ private:
 
 /** The element is a container class. It has a value, the element name,
 	and can contain other elements, text, comments, and unknowns.
-	Elements also contain an arbitrary number of attributes.
+	Elements also contain an arbitrary Score of attributes.
 */
 class TiXmlElement : public TiXmlNode
 {

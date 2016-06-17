@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <time.h>
 
 Game* g_game = 0;
 
@@ -8,6 +9,7 @@ const int DELAY_TIME = 1000.0f / FPS;
 int main( int argc, char* args[] )
 {
 	Uint32 frameStart, frameTime;
+	srand(time(NULL));
 	std::cout << "game init attempt...\n";
 	if ( TheGame::Instance()->init( "Chapter 1", 100, 100, 640, 480, false ) )
 	{

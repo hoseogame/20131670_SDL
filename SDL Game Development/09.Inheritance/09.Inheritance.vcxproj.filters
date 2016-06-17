@@ -82,11 +82,11 @@
     <Filter Include="소스 파일\Game\SDLGameObject\Food">
       <UniqueIdentifier>{882cd6d6-f430-4116-b14c-c4931fbb4d72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Game\SDLGameObject\DeadLine">
-      <UniqueIdentifier>{614f0784-e42a-4c3b-a1d6-779f0b7b3d53}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Game\SDLGameObject\Player\Body">
       <UniqueIdentifier>{e8f3b06f-4e3f-4d3b-958c-92cecfb60a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\SDLGameObject\Number">
+      <UniqueIdentifier>{614f0784-e42a-4c3b-a1d6-779f0b7b3d53}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -168,11 +168,11 @@
     <ClCompile Include="Food.cpp">
       <Filter>소스 파일\Game\SDLGameObject\Food</Filter>
     </ClCompile>
-    <ClCompile Include="Deadline.cpp">
-      <Filter>소스 파일\Game\SDLGameObject\DeadLine</Filter>
-    </ClCompile>
     <ClCompile Include="Body.cpp">
       <Filter>소스 파일\Game\SDLGameObject\Player\Body</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>소스 파일\Game\SDLGameObject\Number</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,9 +245,6 @@
     <ClInclude Include="Food.h">
       <Filter>소스 파일\Game\SDLGameObject\Food</Filter>
     </ClInclude>
-    <ClInclude Include="Deadline.h">
-      <Filter>소스 파일\Game\SDLGameObject\DeadLine</Filter>
-    </ClInclude>
     <ClInclude Include="SnakeDefine.h">
       <Filter>소스 파일\Game</Filter>
     </ClInclude>
@@ -256,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="Debug\SDL_ttf.h">
       <Filter>소스 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>소스 파일\Game\SDLGameObject\Number</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

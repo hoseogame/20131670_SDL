@@ -7,6 +7,9 @@
 #include "InputHandler.h"
 #include "GameOverState.h"
 #include "StateParser.h"
+#include "Score.h"
+#include "SnakeDefine.h"
+#include "Body.h"
 #include <iostream>
 #include <conio.h>
 
@@ -18,19 +21,21 @@ void PlayState::update()
 	{
 		TheGame::Instance()->getStateMachine()->pushState((GameState*) new PauseState());
 	}
+
 	for (int i = 0; i < m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->update();
 	}
-	
-	if (checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[0]), dynamic_cast<SDLGameObject*>(m_gameObjects[2])))
+
+	if (checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[0]), dynamic_cast<SDLGameObject*>(m_gameObjects[1]))) // 사과 충돌
 	{
-		score += 1;
+		m_number->DrawPaticial(m_number->getWidth(), m_number->getHeight(), m_number->SumScore(), 1);
+		m_player->make_tail();
 		m_food->getPosition() = Vector2D(rand() % 600, rand() % 440);
 	}
 
 	if (m_player->getPosition().getX() >= 600.0f || m_player->getPosition().getX() <= 0.0f ||
-		m_player->getPosition().getY() >= 440.0f || m_player->getPosition().getY() <= 0.0f)
+		m_player->getPosition().getY() >= 440.0f || m_player->getPosition().getY() <= 0.0f )
 	{
 		TheGame::Instance()->getStateMachine()->pushState(new GameOverState());
 	}
@@ -47,10 +52,17 @@ bool PlayState::onEnter()
 {
 	StateParser stateParser;
 	stateParser.parseState("text.xml", s_playID, &m_gameObjects, &m_textureIDList);
-
+	
 	m_player = dynamic_cast<Player*>(m_gameObjects[0]); //플레이어의 make tail로 접근하기 위한 다운 캐스팅.
-	m_food = dynamic_cast<Food*>(m_gameObjects[2]);
-	score = 0;
+	m_player->setDirection(E_RIGHT);
+	m_food = dynamic_cast<Food*>(m_gameObjects[1]);
+	m_number = dynamic_cast<Score*>(m_gameObjects[2]);
+	//m_score = dynamic_cast<Score*>(m_gameObjects[3]);
+	//m_score->draw();
+	for (int i = 0; i < 3; ++i)
+	{
+		m_player->make_tail();
+	}
 	return true;
 }
 bool PlayState::onExit()

@@ -136,7 +136,7 @@ extern DECLSPEC int SDLCALL TTF_FontLineSkip(const TTF_Font *font);
 extern DECLSPEC int SDLCALL TTF_GetFontKerning(const TTF_Font *font);
 extern DECLSPEC void SDLCALL TTF_SetFontKerning(TTF_Font *font, int allowed);
 
-/* Get the number of faces of the font */
+/* Get the Score of faces of the font */
 extern DECLSPEC long SDLCALL TTF_FontFaces(const TTF_Font *font);
 
 /* Get the font face attributes, if any */

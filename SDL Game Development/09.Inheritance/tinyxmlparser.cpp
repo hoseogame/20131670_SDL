@@ -410,7 +410,7 @@ const char* TiXmlBase::ReadName( const char* p, TIXML_STRING * name, TiXmlEncodi
 	// Of course, in unicode, tinyxml has no idea what a letter *is*. The
 	// algorithm is generous.
 	//
-	// After that, they can be letters, underscores, numbers,
+	// After that, they can be letters, underscores, Scores,
 	// hyphens, or colons. (Colons are valid ony for namespaces,
 	// but tinyxml can't tell namespaces from names.)
 	if (    p && *p 

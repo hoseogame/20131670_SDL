@@ -99,9 +99,9 @@ void InputHandler::onMouseButtonUp(SDL_Event& evt)
 }
 
 
-bool InputHandler::getMouseButtonState(int buttonNumber)
+bool InputHandler::getMouseButtonState(int buttonScore)
 {
-	return m_mouseButtonStates[buttonNumber];
+	return m_mouseButtonStates[buttonScore];
 }
 Vector2D* InputHandler::getMousePosition()
 {
